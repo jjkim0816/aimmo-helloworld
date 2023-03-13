@@ -1,0 +1,24 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: azure/docker-login@v1
+      with:
+        login-server: backendsandbox.azurecr.io
+        username: ${{secrets.REGINSTRY_USERNAME}}
+        password: ${{secrets.REGISTRY_PASSWORD}}
+    - run:
+        docker build . -f docker/Dockerfile -t backendsandbox.azurecr.io/helloworldrestapi01:${{ github.sha }}
+        docker push backendsandbox.azurecr.io/helloworldrestapi01:${{ github.sha }}

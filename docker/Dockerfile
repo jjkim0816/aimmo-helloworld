@@ -2,7 +2,7 @@ FROM python:3.6.8-stretch
 
 RUN pip install flask
 
-ADD ../src/api.py /root
+ADD src/app.py /root
 
 WORKDIR /root
 

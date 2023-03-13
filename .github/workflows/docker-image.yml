@@ -19,6 +19,6 @@ jobs:
         login-server: backendsandbox.azurecr.io
         username: ${{secrets.REPOSITORY_USERNAME}}
         password: ${{secrets.REPOSITORY_PASSWORD}}
-    - run:
+    - run: |
         docker build -f docker/Dockerfile -t backendsandbox.azurecr.io/helloworldrestapi01:${{ github.sha }} .
         docker push backendsandbox.azurecr.io/helloworldrestapi01:${{ github.sha }}

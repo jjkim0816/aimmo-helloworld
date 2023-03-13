@@ -17,7 +17,7 @@ jobs:
     - uses: azure/docker-login@v1
       with:
         login-server: backendsandbox.azurecr.io
-        username: ${{secrets.REGINSTRY_USERNAME}}
+        username: ${{secrets.REGISTRY_USERNAME}}
         password: ${{secrets.REGISTRY_PASSWORD}}
     - run:
         docker build . -f docker/Dockerfile -t backendsandbox.azurecr.io/helloworldrestapi01:${{ github.sha }}

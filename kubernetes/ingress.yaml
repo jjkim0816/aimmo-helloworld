@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
         - name: prod-testapi
-          image: backendsandbox.azurecr.io/helloworldrestapi01
-          imagePullPolicy: Always
+          image: backendsandbox.azurecr.io/helloworldrestapi01:007dbc2e851be4f23f063cdfea5970a2af0ac4ac
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5001
       imagePullSecrets:

@@ -1,2 +1,3 @@
 # aimmo-helloworld
-Helloworld 앱 CI/CD 실습용
+Helloworld 앱 TEST CI/CD 실습용
+

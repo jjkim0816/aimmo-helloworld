@@ -6,4 +6,4 @@ ADD src/app.py /root
 
 WORKDIR /root
 
-CMD ["python", "api.py"]
+CMD ["python", "app.py"]
